@@ -35,7 +35,7 @@ sudo pacman -S flatpak flatpak-builder
 
 ```bash
 # Clone with submodules
-git clone --recurse-submodules https://github.com/YOUR_USERNAME/Electron-Cash.git
+git clone --recurse-submodules https://github.com/Eggroley/Electron-Cash-flatpak.git
 
 # Or if already cloned, initialize submodules:
 git submodule update --init --recursive
