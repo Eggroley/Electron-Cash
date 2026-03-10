@@ -137,25 +137,14 @@ modules:
         exec /app/bin/electron-cash.real "$@"
         EOF
       - chmod +x ${FLATPAK_DEST}/bin/electron-cash
-      # Install metainfo file
+      # Install metainfo, icons, and desktop file
       - install -Dm644 org.electroncash.ElectronCash.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
-      # Install icons in multiple sizes for system tray
       - install -Dm644 icons/electron-cash.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       - install -Dm644 icons/electron_dark_icon.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}-dark.svg
       - install -Dm644 icons/electron_light_icon.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}-light.svg
-      - install -Dm644 icons/electron-cash.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
-      - install -Dm644 icons/electron-cash.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
-      - install -Dm644 icons/electron-cash.png ${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png
-      - install -Dm644 icons/electron-cash.png ${FLATPAK_DEST}/share/icons/hicolor/48x48/apps/${FLATPAK_ID}.png
-      - install -Dm644 icons/electron-cash.png ${FLATPAK_DEST}/share/icons/hicolor/32x32/apps/${FLATPAK_ID}.png
-      - install -Dm644 icons/electron-cash.png ${FLATPAK_DEST}/share/icons/hicolor/24x24/apps/${FLATPAK_ID}.png
-      - install -Dm644 icons/electron-cash.png ${FLATPAK_DEST}/share/icons/hicolor/22x22/apps/${FLATPAK_ID}.png
-      - install -Dm644 icons/electron-cash.png ${FLATPAK_DEST}/share/icons/hicolor/16x16/apps/${FLATPAK_ID}.png
-      # Also install to pixmaps for legacy tray support
+      - for s in 16 22 24 32 48 64 128 256; do install -Dm644 icons/electron-cash.png ${FLATPAK_DEST}/share/icons/hicolor/${s}x${s}/apps/${FLATPAK_ID}.png; done
       - install -Dm644 icons/electron-cash.png ${FLATPAK_DEST}/share/pixmaps/${FLATPAK_ID}.png
-      # Install desktop file
       - install -Dm644 org.electroncash.ElectronCash.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      # Update desktop file with correct icon name and exec
       - desktop-file-edit --set-key="Icon" --set-value=${FLATPAK_ID} --set-key="Exec" --set-value="electron-cash %u" ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
     sources:
       - type: archive
