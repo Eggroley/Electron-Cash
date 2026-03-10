@@ -5,7 +5,7 @@ Flatpak package for [Electron Cash](https://electroncash.org/), a lightweight SP
 ## Build
 
 ```bash
-git clone --recurse-submodules https://github.com/Eggroley/electron-cash-flatpak.git
+git clone https://github.com/Eggroley/electron-cash-flatpak.git
 cd electron-cash-flatpak
 flatpak-builder --user --install-deps-from=flathub --force-clean build org.electroncash.ElectronCash.yml
 ```
