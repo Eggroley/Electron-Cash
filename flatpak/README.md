@@ -35,7 +35,3 @@ flatpak build-bundle repo Electron-Cash.flatpak org.electroncash.ElectronCash
 2. Update version and SHA256 in `org.electroncash.ElectronCash.yml`
 3. Add release entry to `org.electroncash.ElectronCash.metainfo.xml`
 4. Build and test
-
-## License
-
-MIT
