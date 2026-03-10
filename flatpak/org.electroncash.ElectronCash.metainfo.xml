@@ -40,20 +40,8 @@
 	<url type="contact">https://www.electroncash.org/contact</url>
 	<screenshots>
 		<screenshot type="default">
-			<image type="source">https://raw.githubusercontent.com/Electron-Cash/Electron-Cash/4.4.3/contrib/android/fastlane/metadata/android/en-US/images/phoneScreenshots/01_wallet.png</image>
+			<image type="source">screenshots/wallet-shot-3.png</image>
 			<caption>Main wallet interface showing balance and transaction history</caption>
-		</screenshot>
-		<screenshot>
-			<image type="source">https://raw.githubusercontent.com/Electron-Cash/Electron-Cash/4.4.3/contrib/android/fastlane/metadata/android/en-US/images/phoneScreenshots/02_send.png</image>
-			<caption>Sending Bitcoin Cash with address and amount fields</caption>
-		</screenshot>
-		<screenshot>
-			<image type="source">https://raw.githubusercontent.com/Electron-Cash/Electron-Cash/4.4.3/contrib/android/fastlane/metadata/android/en-US/images/phoneScreenshots/03_receive.png</image>
-			<caption>Receive screen with QR code for payments</caption>
-		</screenshot>
-		<screenshot>
-			<image type="source">https://raw.githubusercontent.com/Electron-Cash/Electron-Cash/4.4.3/contrib/android/fastlane/metadata/android/en-US/images/phoneScreenshots/04_settings.png</image>
-			<caption>Settings configuration window</caption>
 		</screenshot>
 	</screenshots>
 	<translation type="gettext">electron-cash</translation>
